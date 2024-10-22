@@ -9,6 +9,8 @@ public class ObjectDrag : MonoBehaviour
     [SerializeField] GameObject dragObject;
     [SerializeField] GameObject tile;
 
+    [SerializeField] bool isPlaced;
+
     SpriteRenderer tileSprite;
 
     Vector3 GetMousePos()
@@ -19,10 +21,7 @@ public class ObjectDrag : MonoBehaviour
     private void OnMouseDown()
     {
         mousePos = Input.mousePosition - GetMousePos();
-
         dragObject = gameObject;
-
-
     }
 
     private void OnMouseDrag()
@@ -35,11 +34,13 @@ public class ObjectDrag : MonoBehaviour
         if (tile != null)
         {
             dragObject.transform.position = tile.transform.position;
+            isPlaced = true;
         }
 
         if (tile == null)
         {
             transform.position = initialPos;
+            isPlaced=false;
         }
 
         dragObject = null;
@@ -57,7 +58,15 @@ public class ObjectDrag : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        tile = null;
+        //tile = null;
         tileSprite.color = Color.white;
+    }
+
+    private void Update()
+    {
+        if (isPlaced)
+        {
+            tileSprite.color = Color.white;
+        }
     }
 }
