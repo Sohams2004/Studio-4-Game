@@ -35,6 +35,7 @@ public class ObjectDrag : MonoBehaviour
         {
             dragObject.transform.position = tile.transform.position;
             isPlaced = true;
+            ResetTileColor();
         }
 
         if (tile == null)
@@ -50,23 +51,38 @@ public class ObjectDrag : MonoBehaviour
     {
         if (other.CompareTag("Tile") && gameObject.CompareTag("Player"))
         {
+            if (tile != null)
+            {
+                ResetTileColor();
+            }
             tile = other.gameObject;
             tileSprite = tile.GetComponent<SpriteRenderer>();
             tileSprite.color = Color.red;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        //tile = null;
-        tileSprite.color = Color.white;
+        if (other.gameObject == tile && !isPlaced)
+        {
+            ResetTileColor();
+            tile = null;
+        }
     }
 
-    private void Update()
+    void ResetTileColor()
     {
-        if (isPlaced)
+        if (tileSprite != null)
         {
             tileSprite.color = Color.white;
+        }
+    }
+
+    void ResetTile()
+    {
+        if (tile != tile)
+        {
+            ResetTileColor();
         }
     }
 }
