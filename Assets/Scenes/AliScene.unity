@@ -3945,7 +3945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 629655141}
   - component: {fileID: 629655142}
-  m_Layer: 20
+  m_Layer: 3
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3961,7 +3961,7 @@ Transform:
   m_GameObject: {fileID: 629655140}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.091, y: 0.002, z: 0.004}
+  m_LocalPosition: {x: 0.127, y: 0.002, z: 0.004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4005,8 +4005,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1869315837
-  m_SortingLayer: 0
+  m_SortingLayerID: 1751884665
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ed7554aeefd5da44a9fe1ee9b93afe77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6580,7 +6580,7 @@ GameObject:
   - component: {fileID: 1368558315}
   - component: {fileID: 1368558314}
   - component: {fileID: 1368558313}
-  m_Layer: 20
+  m_Layer: 3
   m_Name: PF Props Chest (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8300,7 +8300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1969978763}
   - component: {fileID: 1969978762}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
