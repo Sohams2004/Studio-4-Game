@@ -40,6 +40,7 @@ public class Shoot : MonoBehaviour
 
         if (lastSpawnTime >= spawnInterval)
         {
+            Debug.Log("Bullet shot");
             //Vector3 spawnPosition = transform.position + new Vector3(spawnOffset, 0, 0);
             GameObject projectileSpawn = Instantiate(projectile, transform.position , Quaternion.identity);
             lastSpawnTime = 0;

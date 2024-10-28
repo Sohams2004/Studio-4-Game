@@ -8,9 +8,11 @@ public class Projectile : MonoBehaviour
     Rigidbody2D projectileRB;
     [SerializeField] float force;
 
+    EnemySpawner enemySpawner;
     private void Start()
     {
         projectileRB = GetComponent<Rigidbody2D>();
+        enemySpawner = FindObjectOfType<EnemySpawner>();
     }
 
     void MoveProjectile()
@@ -22,8 +24,9 @@ public class Projectile : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy Hit");
+            Debug.Log("Enemy Hit" + other.gameObject);
             Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 
