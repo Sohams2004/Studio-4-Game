@@ -11,8 +11,8 @@ public class Grid : MonoBehaviour
     [SerializeField] public int gridNodeCountX;
     [SerializeField] public int gridNodeCountY;
 
-    [SerializeField] int nodeWidth;
-    [SerializeField] int nodeHeight;
+    [SerializeField] float nodeWidth;
+    [SerializeField] float nodeHeight;
 
     private void Start()
     {

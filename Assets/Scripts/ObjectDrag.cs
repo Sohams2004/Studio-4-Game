@@ -9,7 +9,7 @@ public class ObjectDrag : MonoBehaviour
     [SerializeField] GameObject dragObject;
     [SerializeField] GameObject tile;
 
-    [SerializeField] bool isPlaced;
+    [SerializeField] public bool isPlaced;
 
     SpriteRenderer tileSprite;
 
@@ -75,6 +75,7 @@ public class ObjectDrag : MonoBehaviour
         if (tileSprite != null)
         {
             tileSprite.color = Color.white;
+            tileSprite.color = new Color(1, 1, 1, 0.4f);
         }
     }
 
