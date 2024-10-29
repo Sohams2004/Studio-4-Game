@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class ObjectDrag : MonoBehaviour
@@ -12,6 +13,14 @@ public class ObjectDrag : MonoBehaviour
     [SerializeField] public bool isPlaced;
 
     SpriteRenderer tileSprite;
+    //BoxCollider2D tileCollider;
+
+    //[SerializeField] TileStatus tileStatus;
+    [SerializeField] ObjectDrag objectDrag;
+    private void Start()
+    {
+        objectDrag = GetComponent<ObjectDrag>();
+    }
 
     Vector3 GetMousePos()
     {
@@ -35,13 +44,17 @@ public class ObjectDrag : MonoBehaviour
         {
             dragObject.transform.position = tile.transform.position;
             isPlaced = true;
+            //tileStatus.isUsed = true;
             ResetTileColor();
+            objectDrag.enabled = false;
+            //DisableTile();
         }
 
         if (tile == null)
         {
             transform.position = initialPos;
-            isPlaced=false;
+            isPlaced = false;
+            //tileStatus = null;
         }
 
         dragObject = null;
@@ -57,6 +70,7 @@ public class ObjectDrag : MonoBehaviour
             }
             tile = other.gameObject;
             tileSprite = tile.GetComponent<SpriteRenderer>();
+            //tileStatus = tile.GetComponent<TileStatus>();
             tileSprite.color = Color.red;
         }
     }
@@ -65,7 +79,9 @@ public class ObjectDrag : MonoBehaviour
     {
         if (other.gameObject == tile && !isPlaced)
         {
+            //tileStatus.isUsed = false;
             ResetTileColor();
+            //EnableTile();
             tile = null;
         }
     }
@@ -85,5 +101,26 @@ public class ObjectDrag : MonoBehaviour
         {
             ResetTileColor();
         }
+    }
+
+    /*void DisableTile()
+    {
+        if (tileStatus.isUsed)
+        {
+            tileCollider = tile.GetComponent<BoxCollider2D>();
+            tileCollider.enabled = false;
+        }
+    }*/
+
+    /*void EnableTile()
+    {
+        if (!tileStatus.isUsed)
+        {
+            tileCollider.enabled = true;
+        }
+    }*/
+
+    private void Update()
+    {
     }
 }
