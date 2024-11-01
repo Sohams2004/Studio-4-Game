@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tower 06 - Level 01 - Weapon_Clip
+  m_Name: NeutralTowerAnim
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,6 +21,8 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
+      value: {fileID: -1047923917640928439, guid: 33c02455d2dffd34691dc708eefd3442, type: 3}
+    - time: 0.03
       value: {fileID: -1047923917640928439, guid: 33c02455d2dffd34691dc708eefd3442, type: 3}
     - time: 0.25
       value: {fileID: 2851813896564572747, guid: 33c02455d2dffd34691dc708eefd3442, type: 3}
@@ -56,6 +58,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
+    - {fileID: -1047923917640928439, guid: 33c02455d2dffd34691dc708eefd3442, type: 3}
     - {fileID: -1047923917640928439, guid: 33c02455d2dffd34691dc708eefd3442, type: 3}
     - {fileID: 2851813896564572747, guid: 33c02455d2dffd34691dc708eefd3442, type: 3}
     - {fileID: 7919579854342293856, guid: 33c02455d2dffd34691dc708eefd3442, type: 3}
