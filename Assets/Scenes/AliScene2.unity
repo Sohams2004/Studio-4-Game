@@ -7761,7 +7761,7 @@ GameObject:
   - component: {fileID: 1685464894}
   - component: {fileID: 1685464893}
   m_Layer: 0
-  m_Name: Walk_3
+  m_Name: FireWorm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10107,17 +10107,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: frost_guardian_free
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: 42ae654ab25826b48ab0d0839c8218de, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: 42ae654ab25826b48ab0d0839c8218de, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 09f87ea5829a8ea4c9cd44bfdd5446e6, type: 2}
     - target: {fileID: 3626916397498700004, guid: 42ae654ab25826b48ab0d0839c8218de, type: 3}
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 42ae654ab25826b48ab0d0839c8218de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9050088
+      value: 6.52
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 42ae654ab25826b48ab0d0839c8218de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3954659
+      value: -1.04
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 42ae654ab25826b48ab0d0839c8218de, type: 3}
       propertyPath: m_LocalPosition.z
