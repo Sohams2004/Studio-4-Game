@@ -15,6 +15,8 @@ public class ObjectDrag : MonoBehaviour
     SpriteRenderer tileSprite;
     //BoxCollider2D tileCollider;
 
+    [SerializeField] CapsuleCollider2D capsuleCollider;
+
     //[SerializeField] TileStatus tileStatus;
     [SerializeField] ObjectDrag objectDrag;
     private void Start()
@@ -31,6 +33,8 @@ public class ObjectDrag : MonoBehaviour
     {
         mousePos = Input.mousePosition - GetMousePos();
         dragObject = gameObject;
+        capsuleCollider = dragObject.GetComponent<CapsuleCollider2D>();
+        capsuleCollider.isTrigger = true;
     }
 
     private void OnMouseDrag()
@@ -47,6 +51,7 @@ public class ObjectDrag : MonoBehaviour
             //tileStatus.isUsed = true;
             ResetTileColor();
             objectDrag.enabled = false;
+            capsuleCollider.isTrigger = false;
             //DisableTile();
         }
 
@@ -54,6 +59,7 @@ public class ObjectDrag : MonoBehaviour
         {
             transform.position = initialPos;
             isPlaced = false;
+            capsuleCollider.isTrigger = false;
             //tileStatus = null;
         }
 
@@ -92,6 +98,17 @@ public class ObjectDrag : MonoBehaviour
         {
             tileSprite.color = Color.white;
             tileSprite.color = new Color(1, 1, 1, 0.4f);
+        }
+    }
+
+    void ColliderTrigger()
+    {
+        if(!isPlaced && capsuleCollider == null)
+        {
+        }
+
+        else if (isPlaced)
+        {
         }
     }
 
