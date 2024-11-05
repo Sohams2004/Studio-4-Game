@@ -78,6 +78,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 42ae654ab25826b48ab0d0839c8218de, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 8011863186823927233}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 42ae654ab25826b48ab0d0839c8218de, type: 3}
+      insertIndex: -1
       addedObject: {fileID: -1232105398559845208}
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 42ae654ab25826b48ab0d0839c8218de, type: 3}
       insertIndex: -1
@@ -91,6 +94,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: 42ae654ab25826b48ab0d0839c8218de, type: 3}
   m_PrefabInstance: {fileID: 4189974288754840991}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8011863186823927233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529577598068933367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e84fa759e228f4da03df12a4dca21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &-1232105398559845208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -126,7 +141,7 @@ BoxCollider2D:
   m_Offset: {x: -0.004999995, y: 0.21737567}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5063291, y: -0.19565217}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.79, y: 0.92}
     newSize: {x: 0.79, y: 0.92}
     adaptiveTilingThreshold: 0.5
