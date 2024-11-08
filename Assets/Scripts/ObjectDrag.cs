@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading;
 using UnityEngine;
 
@@ -13,15 +14,24 @@ public class ObjectDrag : MonoBehaviour
     [SerializeField] public bool isPlaced;
 
     SpriteRenderer tileSprite;
-    //BoxCollider2D tileCollider;
 
-    [SerializeField] CapsuleCollider2D capsuleCollider;
+    [SerializeField] BoxCollider2D boxCollider;
 
-    //[SerializeField] TileStatus tileStatus;
     [SerializeField] ObjectDrag objectDrag;
+    [SerializeField] TowersManager towersManager;
+    [SerializeField] GoldManager goldManager;
+
+    [SerializeField] float towerCost;
+
+    SpriteRenderer towerSpriteRenderer;
+
     private void Start()
     {
         objectDrag = GetComponent<ObjectDrag>();
+        towersManager = FindObjectOfType<TowersManager>();
+        goldManager = FindObjectOfType<GoldManager>();
+
+        towerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     Vector3 GetMousePos()
@@ -33,37 +43,43 @@ public class ObjectDrag : MonoBehaviour
     {
         mousePos = Input.mousePosition - GetMousePos();
         dragObject = gameObject;
-        capsuleCollider = dragObject.GetComponent<CapsuleCollider2D>();
-        capsuleCollider.isTrigger = true;
+        boxCollider = dragObject.GetComponent<BoxCollider2D>();
+        boxCollider.isTrigger = true;
+        towersManager.UpdateTowerPos(gameObject.transform.position);
     }
 
     private void OnMouseDrag()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
+        if (goldManager.EnoughMoney(towerCost))
+        {
+            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
+        }
     }
 
     private void OnMouseUp()
     {
-        if (tile != null)
+        if (goldManager.EnoughMoney(towerCost))
         {
-            dragObject.transform.position = tile.transform.position;
-            isPlaced = true;
-            //tileStatus.isUsed = true;
-            ResetTileColor();
-            objectDrag.enabled = false;
-            capsuleCollider.isTrigger = false;
-            //DisableTile();
-        }
+            if (tile != null)
+            {
+                dragObject.transform.position = tile.transform.position;
+                isPlaced = true;
+                ResetTileColor();
+                objectDrag.enabled = false;
+                boxCollider.isTrigger = false;
+                towersManager.SpawnTowers();
+                goldManager.DecrementGold(towerCost);
+            }
 
-        if (tile == null)
-        {
-            transform.position = initialPos;
-            isPlaced = false;
-            capsuleCollider.isTrigger = false;
-            //tileStatus = null;
-        }
+            if (tile == null)
+            {
+                transform.position = initialPos;
+                isPlaced = false;
+                boxCollider.isTrigger = false;
+            }
 
-        dragObject = null;
+            dragObject = null;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -76,7 +92,6 @@ public class ObjectDrag : MonoBehaviour
             }
             tile = other.gameObject;
             tileSprite = tile.GetComponent<SpriteRenderer>();
-            //tileStatus = tile.GetComponent<TileStatus>();
             tileSprite.color = Color.red;
         }
     }
@@ -85,9 +100,7 @@ public class ObjectDrag : MonoBehaviour
     {
         if (other.gameObject == tile && !isPlaced)
         {
-            //tileStatus.isUsed = false;
             ResetTileColor();
-            //EnableTile();
             tile = null;
         }
     }
@@ -101,17 +114,6 @@ public class ObjectDrag : MonoBehaviour
         }
     }
 
-    void ColliderTrigger()
-    {
-        if(!isPlaced && capsuleCollider == null)
-        {
-        }
-
-        else if (isPlaced)
-        {
-        }
-    }
-
     void ResetTile()
     {
         if (tile != tile)
@@ -120,24 +122,16 @@ public class ObjectDrag : MonoBehaviour
         }
     }
 
-    /*void DisableTile()
-    {
-        if (tileStatus.isUsed)
-        {
-            tileCollider = tile.GetComponent<BoxCollider2D>();
-            tileCollider.enabled = false;
-        }
-    }*/
-
-    /*void EnableTile()
-    {
-        if (!tileStatus.isUsed)
-        {
-            tileCollider.enabled = true;
-        }
-    }*/
-
     private void Update()
     {
+        if (!goldManager.EnoughMoney(towerCost))
+        {
+            towerSpriteRenderer.color = new Color(1, 1, 1, 0.3f);
+        }
+
+        else
+        {
+            towerSpriteRenderer.color = new Color(1, 1, 1, 1);
+        }
     }
 }
