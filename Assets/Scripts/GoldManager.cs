@@ -11,6 +11,17 @@ public class GoldManager : MonoBehaviour
     [SerializeField] float goldIncreaseRate;
     [SerializeField] TextMeshPro goldText;
 
+
+    public bool EnoughMoney(float towerCost)
+    {
+        if(goldAmount >= towerCost)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     private void Start()
     {
         goldAmount = 0;
@@ -27,6 +38,11 @@ public class GoldManager : MonoBehaviour
         
         float gold = Mathf.Round(goldAmount);
         goldText.text = gold.ToString();
+    }
+
+    public void DecrementGold(float gold)
+    {
+        goldAmount -= gold;
     }
 
     private void Update()
