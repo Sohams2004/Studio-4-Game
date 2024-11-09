@@ -16,7 +16,8 @@ public class EnemyMove : MonoBehaviour
 
     void MoveEnemy()
     {
-        enemyRB.velocity = Vector2.left * enemySpeed;
+        enemyRB.velocity = Vector2.left * enemySpeed * 0.2f;
+        Debug.Log(enemyRB.velocity);
     }
 
     private void Update()

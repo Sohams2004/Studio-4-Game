@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] float force;
 
     EnemySpawner enemySpawner;
+    TowerStats towerStats;
+    EnemyStats enemyStats;
     private void Start()
     {
         projectileRB = GetComponent<Rigidbody2D>();
@@ -22,11 +24,20 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Tower"))
+        {
+            Debug.Log("Tower Detected");
+            towerStats = other.GetComponent<TowerStats>();
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Enemy Hit" + other.gameObject);
             Destroy(gameObject);
-            Destroy(other.gameObject);
+            enemyStats = other.GetComponent<EnemyStats>();
+            Debug.Log(towerStats.damage);
+            enemyStats.DecrementHealth(towerStats.damage);
+            //Destroy(other.gameObject);
         }
     }
 
