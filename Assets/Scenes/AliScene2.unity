@@ -196,7 +196,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 6529577598068933367, guid: 0a26491a277a21b4d91e14aa99ced3ae, type: 3}
   - {fileID: 6294994392757683523, guid: aab1a8a6a07c6c54ab312c8e5ddf83a0, type: 3}
-  enemyCount: 2
+  - {fileID: 3426899793474765359, guid: 0f5167972c84a3247aef60c0b28ad394, type: 3}
+  enemyCount: 3
   lastSpawnIndex: 0
   startEnemySpawnTime: 4
 --- !u!4 &27857321
