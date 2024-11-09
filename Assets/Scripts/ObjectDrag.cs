@@ -7,6 +7,8 @@ using UnityEngine;
 public class ObjectDrag : MonoBehaviour
 {
     [SerializeField] GameObject initialPos;
+    [SerializeField] GameObject initialPos2;
+    [SerializeField] GameObject initialPos3;
     Vector3 mousePos;
     [SerializeField] GameObject dragObject;
     [SerializeField] GameObject tile;
@@ -34,6 +36,8 @@ public class ObjectDrag : MonoBehaviour
 
         towerSpriteRenderer = GetComponent<SpriteRenderer>();
         initialPos = GameObject.Find("Initial Tower1 Position");
+        initialPos2 = GameObject.Find("Initial Tower2 Position ");
+        initialPos3 = GameObject.Find("Initial Tower3 Position ");
     }
 
     Vector3 GetMousePos()
@@ -48,6 +52,7 @@ public class ObjectDrag : MonoBehaviour
         boxCollider = dragObject.GetComponent<BoxCollider2D>();
         boxCollider.isTrigger = true;
         towersManager.UpdateTowerPos(gameObject.transform.position);
+        towersManager.currentTower = dragObject;
     }
 
     private void OnMouseDrag()
@@ -76,18 +81,20 @@ public class ObjectDrag : MonoBehaviour
 
             if (tile == null)
             {
-                transform.position = initialPos.transform.position;
+                //transform.position = initialPos.transform.position;
+                SetInitialPosition();
                 isPlaced = false;
                 boxCollider.isTrigger = false;
             }
 
             dragObject = null;
+            towersManager.currentTower = null;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Tile") && gameObject.CompareTag("Tower"))
+        if (other.CompareTag("Tile") && gameObject.CompareTag("Tower") || gameObject.CompareTag("Tower 2") || gameObject.CompareTag("Tower 3"))
         {
             if (tile != null)
             {
@@ -124,6 +131,24 @@ public class ObjectDrag : MonoBehaviour
         if (tile != tile)
         {
             ResetTileColor();
+        }
+    }
+
+    void SetInitialPosition()
+    {
+        if (gameObject.tag == "Tower")
+        {
+            transform.position = initialPos.transform.position;
+        }
+
+        if (gameObject.tag == "Tower 2")
+        {
+            transform.position = initialPos2.transform.position;
+        }
+
+        if (gameObject.tag == "Tower 3")
+        {
+            transform.position = initialPos3.transform.position;
         }
     }
 
