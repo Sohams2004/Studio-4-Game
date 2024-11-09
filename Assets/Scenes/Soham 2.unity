@@ -5042,8 +5042,8 @@ MonoBehaviour:
   gridArraySize: 0
   gridNodeCountX: 9
   gridNodeCountY: 5
-  nodeWidth: 1.35
-  nodeHeight: 1.35
+  nodeWidth: 1.37
+  nodeHeight: 1.37
 --- !u!4 &1196758969
 Transform:
   m_ObjectHideFlags: 0

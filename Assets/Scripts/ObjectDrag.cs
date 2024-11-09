@@ -115,7 +115,7 @@ public class ObjectDrag : MonoBehaviour
         if (tileSprite != null)
         {
             tileSprite.color = Color.white;
-            tileSprite.color = new Color(1, 1, 1, 0.4f);
+            tileSprite.color = new Color(1, 1, 1, 0.0f);
         }
     }
 
