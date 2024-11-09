@@ -61,7 +61,8 @@ public class Shoot : MonoBehaviour
             {
                 weaponAnimator.SetBool("IsShooting", true); // Trigger shooting animation
             }
-            Instantiate(projectile, transform.position, Quaternion.identity); // Spawn projectile
+            GameObject shoot = Instantiate(projectile, transform.position, Quaternion.identity); // Spawn projectile
+            shoot.transform.Rotate(0, 0, -90);
 
             lastSpawnTime = 0;
             canShoot = false; // Temporarily disable shooting

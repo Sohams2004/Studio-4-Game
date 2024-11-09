@@ -7,6 +7,10 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] public float Maxhealth;
     public float health;
     [SerializeField] float damage;
+    [SerializeField] float timer;
+    float time;
+
+    public SpriteRenderer enemySpriteRenderer;
 
     TowerStats towerStats;
     EnemyHEalthBar enemyHEalthBar;
@@ -15,6 +19,7 @@ public class EnemyStats : MonoBehaviour
     {
         health = Maxhealth;
         enemyHEalthBar = GetComponent<EnemyHEalthBar>();
+        enemySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -41,5 +46,10 @@ public class EnemyStats : MonoBehaviour
     void Death()
     {
         Destroy(gameObject);
+    }
+
+
+    private void Update()
+    {
     }
 }

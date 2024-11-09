@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ObjectDrag : MonoBehaviour
 {
-    [SerializeField] Transform initialPos;
+    [SerializeField] GameObject initialPos;
     Vector3 mousePos;
     [SerializeField] GameObject dragObject;
     [SerializeField] GameObject tile;
@@ -33,6 +33,7 @@ public class ObjectDrag : MonoBehaviour
         goldManager = FindObjectOfType<GoldManager>();
 
         towerSpriteRenderer = GetComponent<SpriteRenderer>();
+        initialPos = GameObject.Find("Initial Tower1 Position");
     }
 
     Vector3 GetMousePos()
@@ -51,7 +52,7 @@ public class ObjectDrag : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (goldManager.EnoughMoney(towerCost))
+        if (goldManager.EnoughMoney(towerCost) && !isPlaced)
         {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
         }
@@ -59,7 +60,7 @@ public class ObjectDrag : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (goldManager.EnoughMoney(towerCost))
+        if (goldManager.EnoughMoney(towerCost) && !isPlaced)
         {
             if (tile != null)
             {
@@ -75,7 +76,7 @@ public class ObjectDrag : MonoBehaviour
 
             if (tile == null)
             {
-                transform.position = initialPos.position;
+                transform.position = initialPos.transform.position;
                 isPlaced = false;
                 boxCollider.isTrigger = false;
             }
