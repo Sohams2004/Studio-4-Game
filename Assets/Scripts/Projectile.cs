@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     Rigidbody2D projectileRB;
     [SerializeField] float force;
 
+
     EnemySpawner enemySpawner;
     TowerStats towerStats;
     EnemyStats enemyStats;
@@ -35,7 +36,6 @@ public class Projectile : MonoBehaviour
             Debug.Log("Enemy Hit" + other.gameObject);
             Destroy(gameObject);
             enemyStats = other.GetComponent<EnemyStats>();
-            Debug.Log(towerStats.damage);
             enemyStats.DecrementHealth(towerStats.damage);
             //Destroy(other.gameObject);
         }
