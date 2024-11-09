@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField] float rayLength;
+   [SerializeField] float rayLength;
     [SerializeField] float spawnInterval;
     private float lastSpawnTime;
 
@@ -13,14 +13,26 @@ public class Shoot : MonoBehaviour
     ObjectDrag objectDrag;
     [SerializeField] GameObject projectile;
 
-    private Animator bowAnimator; // Animator on the bow child object
-    private bool canShoot; // Flag to control shooting timing
+    private Animator weaponAnimator; // Reference to the Animator on Bow, IceWeapon, or FireWeapon
+    private bool canShoot;
 
     private void Start()
     {
         objectDrag = GetComponent<ObjectDrag>();
-        bowAnimator = transform.Find("Bow").GetComponent<Animator>(); // Locate bow Animator
-        canShoot = true; // Allow shooting at the start
+
+        // Attempt to find an Animator on Bow, IceWeapon, or FireWeapon child objects
+        Transform bow = transform.Find("Bow");
+        Transform iceWeapon = transform.Find("IceWeapon");
+        Transform fireWeapon = transform.Find("FireWeapon");
+
+        if (bow != null)
+            weaponAnimator = bow.GetComponent<Animator>();
+        else if (iceWeapon != null)
+            weaponAnimator = iceWeapon.GetComponent<Animator>();
+        else if (fireWeapon != null)
+            weaponAnimator = fireWeapon.GetComponent<Animator>();
+
+        canShoot = true; // Enable shooting at start
     }
 
     void EnemyDetect()
@@ -32,9 +44,9 @@ public class Shoot : MonoBehaviour
             {
                 StartShooting();
             }
-            else
+            else if (weaponAnimator != null)
             {
-                bowAnimator.SetBool("IsShooting", false); // Return to idle if no enemy is detected
+                weaponAnimator.SetBool("IsShooting", false); // Return to idle if no enemy is detected
             }
         }
     }
@@ -44,19 +56,22 @@ public class Shoot : MonoBehaviour
         lastSpawnTime += Time.deltaTime;
         if (lastSpawnTime >= spawnInterval)
         {
-            Debug.Log("Bullet shot");
-            bowAnimator.SetBool("IsShooting", true); // Set animation to shooting
-            Instantiate(projectile, transform.position, Quaternion.identity); // Instantiate projectile
+            Debug.Log("Projectile shot");
+            if (weaponAnimator != null)
+            {
+                weaponAnimator.SetBool("IsShooting", true); // Trigger shooting animation
+            }
+            Instantiate(projectile, transform.position, Quaternion.identity); // Spawn projectile
 
             lastSpawnTime = 0;
-            canShoot = false; // Disable shooting temporarily
-            StartCoroutine(ResetShootFlag()); // Start coroutine to re-enable shooting
+            canShoot = false; // Temporarily disable shooting
+            StartCoroutine(ResetShootFlag()); // Re-enable shooting after interval
         }
     }
 
     private IEnumerator ResetShootFlag()
     {
-        yield return new WaitForSeconds(spawnInterval); // Wait for spawn interval
+        yield return new WaitForSeconds(spawnInterval);
         canShoot = true; // Re-enable shooting
     }
 
