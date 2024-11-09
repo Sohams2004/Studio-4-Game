@@ -41,6 +41,7 @@ public class EnemySpawner : MonoBehaviour
         }
         Transform spawnLocation = spawnPoints[randomPosition];
         GameObject spawnEnemy = Instantiate(enemies[randomEnemy], spawnLocation.position, Quaternion.identity);
+        //spawnEnemy.transform.localScale = new Vector2(1.5f, 1.5f);
     }
 
     private void Update()

@@ -46,7 +46,8 @@ public class Shoot : MonoBehaviour
         {
             Debug.Log("Bullet shot");
             bowAnimator.SetBool("IsShooting", true); // Set animation to shooting
-            Instantiate(projectile, transform.position, Quaternion.identity); // Instantiate projectile
+            GameObject _projectile = Instantiate(projectile, transform.position, Quaternion.identity); // Instantiate projectile
+            _projectile.transform.parent = gameObject.transform;
 
             lastSpawnTime = 0;
             canShoot = false; // Disable shooting temporarily

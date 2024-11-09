@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ObjectDrag : MonoBehaviour
 {
-    [SerializeField] Vector2 initialPos;
+    [SerializeField] Transform initialPos;
     Vector3 mousePos;
     [SerializeField] GameObject dragObject;
     [SerializeField] GameObject tile;
@@ -16,6 +16,7 @@ public class ObjectDrag : MonoBehaviour
     SpriteRenderer tileSprite;
 
     [SerializeField] BoxCollider2D boxCollider;
+    [SerializeField] BoxCollider2D tileBoxCollider;
 
     [SerializeField] ObjectDrag objectDrag;
     [SerializeField] TowersManager towersManager;
@@ -69,11 +70,12 @@ public class ObjectDrag : MonoBehaviour
                 boxCollider.isTrigger = false;
                 towersManager.SpawnTowers();
                 goldManager.DecrementGold(towerCost);
+                tileBoxCollider.enabled = false;
             }
 
             if (tile == null)
             {
-                transform.position = initialPos;
+                transform.position = initialPos.position;
                 isPlaced = false;
                 boxCollider.isTrigger = false;
             }
@@ -84,13 +86,14 @@ public class ObjectDrag : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Tile") && gameObject.CompareTag("Player"))
+        if (other.CompareTag("Tile") && gameObject.CompareTag("Tower"))
         {
             if (tile != null)
             {
                 ResetTileColor();
             }
             tile = other.gameObject;
+            tileBoxCollider = tile.GetComponent<BoxCollider2D>();
             tileSprite = tile.GetComponent<SpriteRenderer>();
             tileSprite.color = Color.red;
         }
@@ -102,6 +105,7 @@ public class ObjectDrag : MonoBehaviour
         {
             ResetTileColor();
             tile = null;
+            tileBoxCollider = null;
         }
     }
 
