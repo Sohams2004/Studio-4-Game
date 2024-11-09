@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
-    [SerializeField] GameObject nodePrefab;
+    [SerializeField] GameObject tilePrefab;
 
     [SerializeField] int gridArraySize;
 
@@ -14,6 +14,8 @@ public class Grid : MonoBehaviour
     [SerializeField] float nodeWidth;
     [SerializeField] float nodeHeight;
 
+    [SerializeField] float spacingx;
+    [SerializeField] float spacingy;
     private void Start()
     {
         gridArraySize = gridNodeCountX * gridNodeCountY;
@@ -27,13 +29,13 @@ public class Grid : MonoBehaviour
                 int a = x + y * gridNodeCountX;
 
                 Vector3Int gridPos = new Vector3Int(x, y, 0);
-                Vector3 worldPos = new Vector3(x * nodeWidth, y * nodeHeight, 0);
+                Vector3 worldPos = new Vector3(x * (nodeWidth + spacingx), y * (nodeHeight + spacingy), 0);
                 Vector3 spawnPos = gameObjPos + worldPos;
 
 
                 GameObject tile = null;
 
-                tile = Instantiate(nodePrefab, spawnPos, Quaternion.identity);
+                tile = Instantiate(tilePrefab, spawnPos, Quaternion.identity);
                 tile.transform.localScale = new Vector3(nodeWidth, nodeHeight, 1);
                 tile.transform.parent = gameObject.transform;
             }

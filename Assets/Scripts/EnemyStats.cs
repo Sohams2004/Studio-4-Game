@@ -26,7 +26,7 @@ public class EnemyStats : MonoBehaviour
     {
         towerStats = other.gameObject.GetComponent<TowerStats>();
 
-        if (other.gameObject.CompareTag("Tower"))
+        if (other.gameObject.CompareTag("Tower") || other.gameObject.CompareTag("Tower 2") || other.gameObject.CompareTag("Tower 3"))
         {
             towerStats.DecrementHealth(damage * Time.deltaTime);
         }

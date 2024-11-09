@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.6, y: 7.32, z: 0}
-  m_LocalScale: {x: 0.2998231, y: 0.2862718, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5678887498298606956}
@@ -132,6 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPos: {fileID: 0}
+  initialPos2: {fileID: 0}
+  initialPos3: {fileID: 0}
   dragObject: {fileID: 0}
   tile: {fileID: 0}
   isPlaced: 0
@@ -243,18 +245,6 @@ PrefabInstance:
     - target: {fileID: 2441365781393342991, guid: 18fe96ad8ce127e44a0d0441bba1d0b0, type: 3}
       propertyPath: m_Name
       value: Tower HealthBar 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7190609808021754809, guid: 18fe96ad8ce127e44a0d0441bba1d0b0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.98486674
-      objectReference: {fileID: 0}
-    - target: {fileID: 7190609808021754809, guid: 18fe96ad8ce127e44a0d0441bba1d0b0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.98486674
-      objectReference: {fileID: 0}
-    - target: {fileID: 7190609808021754809, guid: 18fe96ad8ce127e44a0d0441bba1d0b0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4773
       objectReference: {fileID: 0}
     - target: {fileID: 7190609808021754809, guid: 18fe96ad8ce127e44a0d0441bba1d0b0, type: 3}
       propertyPath: m_LocalPosition.x

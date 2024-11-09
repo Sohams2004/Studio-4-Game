@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2253911629886400664, guid: dc577aa88b4bb0a4e9f7c5b6a96cb00b, type: 3}
       propertyPath: m_Name
-      value: Tower 05 - Level 02 - Projectile
+      value: FireBullet
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: dc577aa88b4bb0a4e9f7c5b6a96cb00b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -116,7 +116,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.11500001, y: 0.44}
+  m_Offset: {x: 0.094799876, y: 0.4280584}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.1891892, y: -0.7222222}
@@ -127,7 +127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37, y: 0.36}
+  m_Size: {x: 0.41040015, y: 0.48263645}
   m_EdgeRadius: 0
 --- !u!50 &-8754029292007255867
 Rigidbody2D:

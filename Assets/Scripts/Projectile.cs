@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Tower"))
+        if (other.gameObject.CompareTag("Tower") || other.gameObject.CompareTag("Tower 2") || other.gameObject.CompareTag("Tower 3"))
         {
             Debug.Log("Tower Detected");
             towerStats = other.GetComponent<TowerStats>();
@@ -34,9 +34,9 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Enemy Hit" + other.gameObject);
-            Destroy(gameObject);
             enemyStats = other.GetComponent<EnemyStats>();
             enemyStats.DecrementHealth(towerStats.damage);
+            Destroy(gameObject);
             //Destroy(other.gameObject);
         }
     }
