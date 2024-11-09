@@ -14,7 +14,7 @@ public class EnemyAtkAnim : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Tower"))
         {
             isAttacking = true;
             animator.SetBool("isAttacking", true); // Start Attack animation
@@ -23,7 +23,7 @@ public class EnemyAtkAnim : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Tower"))
         {
             isAttacking = false;
             animator.SetBool("isAttacking", false); // Return to Walking animation

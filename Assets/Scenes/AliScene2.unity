@@ -2824,6 +2824,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549432083}
   m_CullTransparentMesh: 1
+--- !u!1 &567465922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5473401512405796050, guid: fdca4bab0bb40ba4e89796ebc04885f3, type: 3}
+  m_PrefabInstance: {fileID: 3390257030211381096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &606532749
 GameObject:
   m_ObjectHideFlags: 0
@@ -5428,6 +5433,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!1 &1307311370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3571377734234276249, guid: af05923701f11b04fa734caa995891f4, type: 3}
+  m_PrefabInstance: {fileID: 2171513714877153038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1316986963
 GameObject:
   m_ObjectHideFlags: 0
@@ -6178,6 +6188,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6316722274724598411, guid: fdca4bab0bb40ba4e89796ebc04885f3, type: 3}
   m_PrefabInstance: {fileID: 3390257030211381096}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1535013094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567465922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdab218d8d1ba0e4c80ae4310ac93e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Maxhealth: 50
+  health: 0
+  damage: 10
 --- !u!1 &1553507499
 GameObject:
   m_ObjectHideFlags: 0
@@ -8762,6 +8787,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2291606714367143058, guid: af05923701f11b04fa734caa995891f4, type: 3}
   m_PrefabInstance: {fileID: 2171513714877153038}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1988935804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307311370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdab218d8d1ba0e4c80ae4310ac93e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Maxhealth: 50
+  health: 0
+  damage: 10
 --- !u!1 &1994337415
 GameObject:
   m_ObjectHideFlags: 0
@@ -9389,7 +9429,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3571377734234276249, guid: af05923701f11b04fa734caa995891f4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1988935804}
   m_SourcePrefab: {fileID: 100100000, guid: af05923701f11b04fa734caa995891f4, type: 3}
 --- !u!1001 &3390257030211381096
 PrefabInstance:
@@ -9446,7 +9489,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5473401512405796050, guid: fdca4bab0bb40ba4e89796ebc04885f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1535013094}
   m_SourcePrefab: {fileID: 100100000, guid: fdca4bab0bb40ba4e89796ebc04885f3, type: 3}
 --- !u!1001 &6994823914281306056
 PrefabInstance:
