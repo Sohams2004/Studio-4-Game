@@ -225,9 +225,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059fcfd1f28a3e94b956e0d832fad3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 1
   Maxhealth: 50
   health: 0
   damage: 15
+  timer: 0
+  enemySpriteRenderer: {fileID: 0}
 --- !u!114 &1941162210650979918
 MonoBehaviour:
   m_ObjectHideFlags: 0

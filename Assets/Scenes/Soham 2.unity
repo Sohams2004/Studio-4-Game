@@ -5080,6 +5080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 6919820556516412108, guid: 5ef26c0854b039548984851fe533f1b2, type: 3}
+  tileInstance: {fileID: 0}
   gridArraySize: 0
   gridNodeCountX: 9
   gridNodeCountY: 5
@@ -5087,6 +5088,8 @@ MonoBehaviour:
   nodeHeight: 1.37
   spacingx: 0.05
   spacingy: 0.05
+  spriteRenderers: []
+  fadeAmount: 0.3
 --- !u!4 &1196758969
 Transform:
   m_ObjectHideFlags: 0

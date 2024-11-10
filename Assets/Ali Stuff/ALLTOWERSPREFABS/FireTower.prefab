@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdab218d8d1ba0e4c80ae4310ac93e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 1
   Maxhealth: 75
   health: 0
   damage: 15

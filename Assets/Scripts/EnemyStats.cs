@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
+    [SerializeField] EnemyType enemyType;
+
     [SerializeField] public float Maxhealth;
     public float health;
     [SerializeField] float damage;
