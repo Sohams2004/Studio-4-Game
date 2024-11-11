@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayLength: 12
-  spawnInterval: 1
+  spawnInterval: 0.8
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -206,7 +206,7 @@ MonoBehaviour:
   objectDrag: {fileID: 0}
   towersManager: {fileID: 0}
   goldManager: {fileID: 0}
-  towerCost: 15
+  towerCost: 20
   costText: {fileID: 0}
 --- !u!114 &3004109878646529115
 MonoBehaviour:
