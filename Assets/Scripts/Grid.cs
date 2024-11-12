@@ -5,6 +5,7 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
     [SerializeField] GameObject tilePrefab;
+    [SerializeField] SpriteRenderer tileInstance;
 
     [SerializeField] int gridArraySize;
 
@@ -16,7 +17,20 @@ public class Grid : MonoBehaviour
 
     [SerializeField] float spacingx;
     [SerializeField] float spacingy;
+
+    [SerializeField] List<SpriteRenderer> spriteRenderers = new List<SpriteRenderer>();
+
+    [Range(0f, 1f)]
+    [SerializeField] float fadeAmount;
+
     private void Start()
+    {
+        //tileInstance = tileSpriteRenderer = tilePrefab.GetComponent<SpriteRenderer>();
+        
+        GridFormation();
+    }
+
+    void GridFormation()
     {
         gridArraySize = gridNodeCountX * gridNodeCountY;
 
@@ -38,7 +52,48 @@ public class Grid : MonoBehaviour
                 tile = Instantiate(tilePrefab, spawnPos, Quaternion.identity);
                 tile.transform.localScale = new Vector3(nodeWidth, nodeHeight, 1);
                 tile.transform.parent = gameObject.transform;
+
+                var spriteRenderer = tile.GetComponent<SpriteRenderer>();
+                if (spriteRenderers != null)
+                {
+                    spriteRenderers.Add(spriteRenderer);
+                }
             }
         }
+    }
+
+    IEnumerator TileIndication()
+    {
+        for (int i = 0; i < spriteRenderers.Count; i++)
+        {
+            spriteRenderers[i].color = new Color(1, 1, 1, fadeAmount);
+        }
+
+        yield return new WaitForSeconds(1);
+
+        if(fadeAmount > 0)
+        {
+            fadeAmount -= Time.deltaTime;
+
+            for (int i = 0; i < spriteRenderers.Count; i++)
+            {
+                spriteRenderers[i].color = new Color(1, 1, 1, fadeAmount);
+            }
+
+            yield return null;
+        }
+
+        else
+        {
+            for (int i = 0; i < spriteRenderers.Count; i++)
+            {
+                spriteRenderers[i].color = new Color(1, 1, 1, 0);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        StartCoroutine(TileIndication());
     }
 }

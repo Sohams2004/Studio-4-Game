@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerStats : MonoBehaviour
 {
+    [SerializeField] TowerType towerType;
+
     [SerializeField] public float Maxhealth;
     public float health;
     [SerializeField] public float damage;

@@ -10,8 +10,6 @@ public class TowersManager : MonoBehaviour
     [SerializeField] public GameObject currentTower;
 
     Vector2 towerPos;
-    Vector2 towerPos2;
-    Vector2 towerPos3;
 
     public void SpawnTowers()
     {

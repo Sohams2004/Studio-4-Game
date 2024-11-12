@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class ObjectDrag : MonoBehaviour
@@ -26,6 +27,8 @@ public class ObjectDrag : MonoBehaviour
 
     [SerializeField] float towerCost;
 
+    [SerializeField] TextMeshPro costText;
+
     SpriteRenderer towerSpriteRenderer;
 
     private void Start()
@@ -33,11 +36,14 @@ public class ObjectDrag : MonoBehaviour
         objectDrag = GetComponent<ObjectDrag>();
         towersManager = FindObjectOfType<TowersManager>();
         goldManager = FindObjectOfType<GoldManager>();
+        costText = GetComponentInChildren<TextMeshPro>();
 
         towerSpriteRenderer = GetComponent<SpriteRenderer>();
         initialPos = GameObject.Find("Initial Tower1 Position");
         initialPos2 = GameObject.Find("Initial Tower2 Position ");
         initialPos3 = GameObject.Find("Initial Tower3 Position ");
+
+        CostText();
     }
 
     Vector3 GetMousePos()
@@ -61,6 +67,7 @@ public class ObjectDrag : MonoBehaviour
         {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
         }
+        DisableCostText();
     }
 
     private void OnMouseUp()
@@ -85,6 +92,7 @@ public class ObjectDrag : MonoBehaviour
                 SetInitialPosition();
                 isPlaced = false;
                 boxCollider.isTrigger = false;
+                costText.enabled = true;
             }
 
             dragObject = null;
@@ -94,7 +102,7 @@ public class ObjectDrag : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Tile") && gameObject.CompareTag("Tower") || gameObject.CompareTag("Tower 2") || gameObject.CompareTag("Tower 3"))
+        if (other.CompareTag("Tile") && (gameObject.CompareTag("Tower") || gameObject.CompareTag("Tower 2") || gameObject.CompareTag("Tower 3")))
         {
             if (tile != null)
             {
@@ -150,6 +158,16 @@ public class ObjectDrag : MonoBehaviour
         {
             transform.position = initialPos3.transform.position;
         }
+    }
+
+    void DisableCostText()
+    {
+        costText.enabled = false;
+    }
+
+    void CostText()
+    {
+        costText.text = towerCost.ToString();
     }
 
     private void Update()
