@@ -16,7 +16,7 @@ public class ObjectDrag : MonoBehaviour
 
     [SerializeField] public bool isPlaced;
 
-    SpriteRenderer tileSprite;
+    [SerializeField] SpriteRenderer tileSprite;
 
     [SerializeField] BoxCollider2D boxCollider;
     [SerializeField] BoxCollider2D tileBoxCollider;
@@ -102,7 +102,7 @@ public class ObjectDrag : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Tile") && (gameObject.CompareTag("Tower") || gameObject.CompareTag("Tower 2") || gameObject.CompareTag("Tower 3")))
+        if (other.CompareTag("Tile") /*&& (gameObject.CompareTag("Tower") || gameObject.CompareTag("Tower 2") || gameObject.CompareTag("Tower 3")*/)
         {
             if (tile != null)
             {

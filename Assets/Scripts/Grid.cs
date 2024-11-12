@@ -5,7 +5,6 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
     [SerializeField] GameObject tilePrefab;
-    [SerializeField] SpriteRenderer tileInstance;
 
     [SerializeField] int gridArraySize;
 
@@ -23,10 +22,14 @@ public class Grid : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] float fadeAmount;
 
+    [SerializeField] float startTimer;
+
+    Grid grid;
+
     private void Start()
     {
         //tileInstance = tileSpriteRenderer = tilePrefab.GetComponent<SpriteRenderer>();
-        
+        grid = GetComponent<Grid>();
         GridFormation();
     }
 
@@ -90,6 +93,10 @@ public class Grid : MonoBehaviour
                 spriteRenderers[i].color = new Color(1, 1, 1, 0);
             }
         }
+
+        yield return new WaitForSeconds(0.5f);
+
+        grid.enabled = false;
     }
 
     private void Update()
