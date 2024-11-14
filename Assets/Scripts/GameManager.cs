@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject pausePanel;
 
-    [SerializeField] int pauseIndex;
+    [SerializeField] bool isPaused;
 
     Base _base;
 
@@ -35,17 +35,20 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseIndex++;
-            Time.timeScale = 0;
-            pausePanel.SetActive(true);
-        }
+            if(!isPaused)
+            {
+                isPaused = true;
+                Time.timeScale = 0;
+                pausePanel.SetActive(true);
+            }
 
-        /*if(Input.GetKeyDown(KeyCode.Escape) && pauseIndex == 2)
-        {
-            pauseIndex = 1;
-            Time.timeScale = 1;
-            pausePanel.SetActive(false);
-        }*/
+            else
+            {
+                isPaused=false;
+                Time.timeScale = 1;
+                pausePanel.SetActive(false);
+            }
+        }
     }
 
     public void Resume()
