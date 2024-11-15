@@ -78,11 +78,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8927945935034071711, guid: aab1a8a6a07c6c54ab312c8e5ddf83a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.015
+      value: 0.209
       objectReference: {fileID: 0}
     - target: {fileID: 8927945935034071711, guid: aab1a8a6a07c6c54ab312c8e5ddf83a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.236
+      value: 0.159
       objectReference: {fileID: 0}
     - target: {fileID: 8927945935034071711, guid: aab1a8a6a07c6c54ab312c8e5ddf83a0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -151,9 +151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059fcfd1f28a3e94b956e0d832fad3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 0
   Maxhealth: 30
   health: 0
   damage: 10
+  timer: 0
+  enemySpriteRenderer: {fileID: 0}
 --- !u!114 &8195372012916153515
 MonoBehaviour:
   m_ObjectHideFlags: 0

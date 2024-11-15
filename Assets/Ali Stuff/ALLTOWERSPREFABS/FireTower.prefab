@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayLength: 12
-  spawnInterval: 0.3
+  spawnInterval: 2.5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -200,6 +200,7 @@ MonoBehaviour:
   dragObject: {fileID: 0}
   tile: {fileID: 0}
   isPlaced: 0
+  tileSprite: {fileID: 0}
   boxCollider: {fileID: 0}
   tileBoxCollider: {fileID: 0}
   objectDrag: {fileID: 0}
@@ -222,7 +223,7 @@ MonoBehaviour:
   towerType: 1
   Maxhealth: 75
   health: 0
-  damage: 15
+  damage: 30
 --- !u!114 &8237381772898395457
 MonoBehaviour:
   m_ObjectHideFlags: 0
