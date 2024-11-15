@@ -156,7 +156,6 @@ MonoBehaviour:
   health: 0
   damage: 10
   timer: 0
-  goldIncreaseUponKill: 5
   enemySpriteRenderer: {fileID: 0}
 --- !u!114 &8195372012916153515
 MonoBehaviour:

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GoldManager : MonoBehaviour
 {
-    [SerializeField] public float goldAmount;
+    [SerializeField] float goldAmount;
     [SerializeField] float goldMaxAmount;
     [SerializeField] float goldIncreaseRate;
     [SerializeField] TextMeshPro goldText;

@@ -17,14 +17,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] int lastSpawnIndex;
 
     [SerializeField] float startEnemySpawnTime;
-    [SerializeField] float updatedStartEnemySpawnTime;
-
-    Timer timer;
 
     private void Start()
     {
-        timer = FindObjectOfType<Timer>();
-        updatedStartEnemySpawnTime = startEnemySpawnTime;
     }
 
     public void SpawnEnemy()
@@ -49,24 +44,14 @@ public class EnemySpawner : MonoBehaviour
         //spawnEnemy.transform.localScale = new Vector2(1.5f, 1.5f);
     }
 
-    void IncreaseSpawnRate()
-    {
-        if (timer.second <= 30)
-        {
-            startEnemySpawnTime = 2;
-        }
-    }
-
     private void Update()
     {
-        updatedStartEnemySpawnTime -= Time.deltaTime;
+        startEnemySpawnTime -= Time.deltaTime;
 
-        if (updatedStartEnemySpawnTime < 0)
+        if (startEnemySpawnTime < 0)
         {
             SpawnEnemy();
-            updatedStartEnemySpawnTime = startEnemySpawnTime;
+            startEnemySpawnTime = 4;
         }
-
-        IncreaseSpawnRate();
     }
 }

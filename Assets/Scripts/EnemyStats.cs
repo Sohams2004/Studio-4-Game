@@ -11,22 +11,17 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] float timer;
     float time;
-    [SerializeField] float goldIncreaseUponKill;
 
     public SpriteRenderer enemySpriteRenderer;
 
     TowerStats towerStats;
     EnemyHEalthBar enemyHEalthBar;
-    KillCount killCount;
-    GoldManager goldManager;
 
     private void Start()
     {
         health = Maxhealth;
         enemyHEalthBar = GetComponent<EnemyHEalthBar>();
-        killCount = FindObjectOfType<KillCount>();
         enemySpriteRenderer = GetComponent<SpriteRenderer>();
-        goldManager = FindObjectOfType<GoldManager>();  
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -42,7 +37,7 @@ public class EnemyStats : MonoBehaviour
     public void DecrementHealth(float damage)
     {
         health -= damage;
-        if (health <= 0)
+        if(health <= 0 )
         {
             Death();
         }
@@ -50,15 +45,8 @@ public class EnemyStats : MonoBehaviour
         enemyHEalthBar.ReduceHealthBar();
     }
 
-    void GoldIncreaseOnKill()
-    {
-        goldManager.goldAmount += goldIncreaseUponKill;
-    }
-
     void Death()
     {
-        killCount.IncrementKills();
-        GoldIncreaseOnKill();
         Destroy(gameObject);
     }
 
