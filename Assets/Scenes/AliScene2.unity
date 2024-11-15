@@ -11975,7 +11975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   min: 5
-  second: 60
+  second: 120
   timerText: {fileID: 1120958069}
 --- !u!4 &2110692451
 Transform:
