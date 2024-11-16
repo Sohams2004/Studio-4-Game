@@ -224,7 +224,7 @@ MonoBehaviour:
   towerType: 0
   Maxhealth: 50
   health: 0
-  damage: 10
+  damage: 8
 --- !u!114 &2695989064868286287
 MonoBehaviour:
   m_ObjectHideFlags: 0
