@@ -138,6 +138,7 @@ MonoBehaviour:
   dragObject: {fileID: 0}
   tile: {fileID: 0}
   isPlaced: 0
+  tileSprite: {fileID: 0}
   boxCollider: {fileID: 0}
   tileBoxCollider: {fileID: 0}
   objectDrag: {fileID: 0}
@@ -220,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdab218d8d1ba0e4c80ae4310ac93e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 0
   Maxhealth: 50
   health: 0
   damage: 10
@@ -468,8 +470,128 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1336342341008335223, guid: de30058e091683741951342a0519bc70, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2987455759876477145}
+    - targetCorrespondingSourceObject: {fileID: 1336342341008335223, guid: de30058e091683741951342a0519bc70, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8705389454493329354}
   m_SourcePrefab: {fileID: 100100000, guid: de30058e091683741951342a0519bc70, type: 3}
+--- !u!1 &4837583537990888713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1336342341008335223, guid: de30058e091683741951342a0519bc70, type: 3}
+  m_PrefabInstance: {fileID: 5884279328646417534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2987455759876477145
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837583537990888713}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0dd7e44843278c945932ca09593721c1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.088
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8705389454493329354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837583537990888713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b203fbc4d3974d3438632e20da661ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bowSound: {fileID: 2987455759876477145}
 --- !u!4 &5678887498298606956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2262600079919155474, guid: de30058e091683741951342a0519bc70, type: 3}
