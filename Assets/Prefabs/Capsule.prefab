@@ -495,7 +495,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0dd7e44843278c945932ca09593721c1, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.088
+  m_Volume: 0.195
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -591,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b203fbc4d3974d3438632e20da661ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bowSound: {fileID: 2987455759876477145}
+  weaponSound: {fileID: 2987455759876477145}
 --- !u!4 &5678887498298606956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2262600079919155474, guid: de30058e091683741951342a0519bc70, type: 3}
