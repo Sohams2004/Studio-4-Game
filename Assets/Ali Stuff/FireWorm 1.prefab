@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 85809333609767477, guid: aab1a8a6a07c6c54ab312c8e5ddf83a0, type: 3}
       propertyPath: enemySpeed
-      value: 2.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4247113596495090320, guid: aab1a8a6a07c6c54ab312c8e5ddf83a0, type: 3}
       propertyPath: m_SortingOrder
