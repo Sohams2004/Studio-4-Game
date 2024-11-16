@@ -857,14 +857,10 @@ MonoBehaviour:
   - {fileID: 939614788}
   - {fileID: 1707827916}
   - {fileID: 1551086394}
-  enemies:
-  - {fileID: 6529577598068933367, guid: 0a26491a277a21b4d91e14aa99ced3ae, type: 3}
-  - {fileID: 6199289697138883703, guid: aed231c3f43e7e6499aad782b67ea5bb, type: 3}
-  - {fileID: 3426899793474765359, guid: 0f5167972c84a3247aef60c0b28ad394, type: 3}
-  enemyCount: 2
-  lastSpawnIndex: 0
-  startEnemySpawnTime: 4
-  updatedStartEnemySpawnTime: 0
+  mushroomEnemy: {fileID: 3426899793474765359, guid: 0f5167972c84a3247aef60c0b28ad394, type: 3}
+  fireEnemy: {fileID: 6199289697138883703, guid: aed231c3f43e7e6499aad782b67ea5bb, type: 3}
+  iceEnemy: {fileID: 6529577598068933367, guid: 0a26491a277a21b4d91e14aa99ced3ae, type: 3}
+  initialSpawnTime: 4
 --- !u!4 &213470556
 Transform:
   m_ObjectHideFlags: 0
