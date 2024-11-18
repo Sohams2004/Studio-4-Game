@@ -11,19 +11,20 @@ public class ObjectDrag : MonoBehaviour
     [SerializeField] GameObject initialPos2;
     [SerializeField] GameObject initialPos3;
     Vector3 mousePos;
-    [SerializeField] GameObject dragObject;
-    [SerializeField] GameObject tile;
+    GameObject dragObject;
+    GameObject tile;
 
-    [SerializeField] public bool isPlaced;
+    public bool isPlaced;
 
-    [SerializeField] SpriteRenderer tileSprite;
+    SpriteRenderer tileSprite;
 
-    [SerializeField] BoxCollider2D boxCollider;
-    [SerializeField] BoxCollider2D tileBoxCollider;
+    BoxCollider2D boxCollider;
+    BoxCollider2D tileBoxCollider;
+    BoxCollider2D towerBoxCollider;
 
-    [SerializeField] ObjectDrag objectDrag;
-    [SerializeField] TowersManager towersManager;
-    [SerializeField] GoldManager goldManager;
+    ObjectDrag objectDrag;
+    TowersManager towersManager;
+    GoldManager goldManager;
 
     [SerializeField] float towerCost;
 
@@ -39,6 +40,7 @@ public class ObjectDrag : MonoBehaviour
         costText = GetComponentInChildren<TextMeshPro>();
 
         towerSpriteRenderer = GetComponent<SpriteRenderer>();
+        towerBoxCollider = GetComponent<BoxCollider2D>();
         initialPos = GameObject.Find("Initial Tower1 Position");
         initialPos2 = GameObject.Find("Initial Tower2 Position ");
         initialPos3 = GameObject.Find("Initial Tower3 Position ");
@@ -175,11 +177,13 @@ public class ObjectDrag : MonoBehaviour
         if (!goldManager.EnoughMoney(towerCost))
         {
             towerSpriteRenderer.color = new Color(1, 1, 1, 0.3f);
+            towerBoxCollider.enabled = false;
         }
 
         else
         {
             towerSpriteRenderer.color = new Color(1, 1, 1, 1);
+            towerBoxCollider.enabled = true;
         }
     }
 }
