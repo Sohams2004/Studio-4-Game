@@ -271,14 +271,10 @@ MonoBehaviour:
   - {fileID: 214832459}
   - {fileID: 526325937}
   - {fileID: 1598961236}
-  enemies:
-  - {fileID: 6529577598068933367, guid: 0a26491a277a21b4d91e14aa99ced3ae, type: 3}
-  - {fileID: 6199289697138883703, guid: aed231c3f43e7e6499aad782b67ea5bb, type: 3}
-  - {fileID: 3426899793474765359, guid: 0f5167972c84a3247aef60c0b28ad394, type: 3}
-  enemyCount: 2
-  lastSpawnIndex: 0
-  startEnemySpawnTime: 4
-  updatedStartEnemySpawnTime: 0
+  mushroomEnemy: {fileID: 3426899793474765359, guid: 0f5167972c84a3247aef60c0b28ad394, type: 3}
+  fireEnemy: {fileID: 6199289697138883703, guid: aed231c3f43e7e6499aad782b67ea5bb, type: 3}
+  iceEnemy: {fileID: 6529577598068933367, guid: 0a26491a277a21b4d91e14aa99ced3ae, type: 3}
+  initialSpawnTime: 4
 --- !u!4 &27857321
 Transform:
   m_ObjectHideFlags: 0
@@ -1059,7 +1055,7 @@ Transform:
   m_GameObject: {fileID: 214832458}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.72, y: -0.78, z: 0.08515062}
+  m_LocalPosition: {x: 4.72, y: -1.07, z: 0.08515062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1750,6 +1746,7 @@ MonoBehaviour:
   tower2: {fileID: 3571377734234276249, guid: af05923701f11b04fa734caa995891f4, type: 3}
   tower3: {fileID: 5473401512405796050, guid: fdca4bab0bb40ba4e89796ebc04885f3, type: 3}
   currentTower: {fileID: 0}
+  towerSize: {x: 1.12, y: 1.12}
 --- !u!4 &452159541
 Transform:
   m_ObjectHideFlags: 0
@@ -3187,7 +3184,7 @@ Transform:
   m_GameObject: {fileID: 526325936}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.72, y: -2.19, z: 0.08515062}
+  m_LocalPosition: {x: 4.72, y: -2.4, z: 0.08515062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3301,6 +3298,154 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &547038772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 547038774}
+  - component: {fileID: 547038773}
+  - component: {fileID: 547038775}
+  m_Layer: 0
+  m_Name: Gold collect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &547038773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547038772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cf64e01da4d994d9f11568924486ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1819834505}
+  objectHit: {fileID: 0}
+  rayLength: 4
+  goldAmount: 5
+  goldLayer:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!4 &547038774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547038772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9949638, y: -3.8578682, z: 0.20906189}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &547038775
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547038772}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a3e8acf7628bac14daabbb1685a90186, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &549432083
 GameObject:
   m_ObjectHideFlags: 0
@@ -8614,7 +8759,7 @@ Transform:
   m_GameObject: {fileID: 1598961235}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.72, y: -3.66, z: 0.08515062}
+  m_LocalPosition: {x: 4.72, y: -3.87, z: 0.08515062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11925,7 +12070,7 @@ Transform:
   m_GameObject: {fileID: 2078989743}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.25, y: 0.64, z: 0.08515062}
+  m_LocalPosition: {x: 4.25, y: 0.35, z: 0.08515062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12051,3 +12196,4 @@ SceneRoots:
   - {fileID: 51877273}
   - {fileID: 1679205824}
   - {fileID: 410244682}
+  - {fileID: 547038774}

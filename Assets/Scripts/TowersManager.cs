@@ -10,13 +10,14 @@ public class TowersManager : MonoBehaviour
     [SerializeField] public GameObject currentTower;
 
     Vector2 towerPos;
+    [SerializeField] Vector2 towerSize;
 
     public void SpawnTowers()
     {
         if (currentTower.tag == "Tower")
         {
             GameObject _tower1 = Instantiate(tower, towerPos, Quaternion.identity);
-            tower.transform.localScale = Vector2.one;
+            tower.transform.localScale = towerSize;
         }
 
         if (currentTower.tag == "Tower 2")

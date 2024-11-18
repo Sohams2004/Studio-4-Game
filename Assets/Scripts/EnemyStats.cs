@@ -15,6 +15,8 @@ public class EnemyStats : MonoBehaviour
 
     public SpriteRenderer enemySpriteRenderer;
 
+    [SerializeField] GameObject dropGold;
+
     TowerStats towerStats;
     EnemyHEalthBar enemyHEalthBar;
     KillCount killCount;
@@ -58,8 +60,14 @@ public class EnemyStats : MonoBehaviour
     void Death()
     {
         killCount.IncrementKills();
+        DropGold();
         GoldIncreaseOnKill();
         Destroy(gameObject);
+    }
+
+    void DropGold()
+    {
+        GameObject gold = Instantiate(dropGold, gameObject.transform.position, Quaternion.identity);
     }
 
 
