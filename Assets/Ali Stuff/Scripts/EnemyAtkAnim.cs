@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAtkAnim : MonoBehaviour
 {
-     private Animator animator;
+    private Animator animator;
     private bool isAttacking = false;
 
     void Start()
@@ -14,7 +14,10 @@ public class EnemyAtkAnim : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Tower"))
+        // Check for all three tower tags: "Tower", "Tower 2", and "Tower 3"
+        if (collision.gameObject.CompareTag("Tower") || 
+            collision.gameObject.CompareTag("Tower 2") || 
+            collision.gameObject.CompareTag("Tower 3"))
         {
             isAttacking = true;
             animator.SetBool("isAttacking", true); // Start Attack animation
@@ -23,10 +26,14 @@ public class EnemyAtkAnim : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Tower"))
+        // Check for all three tower tags on exit
+        if (collision.gameObject.CompareTag("Tower") || 
+            collision.gameObject.CompareTag("Tower 2") || 
+            collision.gameObject.CompareTag("Tower 3"))
         {
             isAttacking = false;
             animator.SetBool("isAttacking", false); // Return to Walking animation
         }
-    }   
+    }
 }
+
