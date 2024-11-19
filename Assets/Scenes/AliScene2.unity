@@ -3540,7 +3540,7 @@ MonoBehaviour:
   tower2: {fileID: 3571377734234276249, guid: af05923701f11b04fa734caa995891f4, type: 3}
   tower3: {fileID: 5473401512405796050, guid: fdca4bab0bb40ba4e89796ebc04885f3, type: 3}
   currentTower: {fileID: 0}
-  towerSize: {x: 0, y: 0}
+  towerSize: {x: 1.12, y: 1.12}
 --- !u!4 &660425141
 Transform:
   m_ObjectHideFlags: 0
@@ -3653,7 +3653,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: -917265863, guid: e07ac0087643c124c8bf2a6b9339bf56, type: 3}
+  m_Sprite: {fileID: -374573976, guid: e07ac0087643c124c8bf2a6b9339bf56, type: 3}
   m_Color: {r: 1, g: 0.44705883, b: 0.44705883, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4701,7 +4701,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: -917265863, guid: e07ac0087643c124c8bf2a6b9339bf56, type: 3}
+  m_Sprite: {fileID: -374573976, guid: e07ac0087643c124c8bf2a6b9339bf56, type: 3}
   m_Color: {r: 1, g: 0.44705883, b: 0.44705883, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7185,7 +7185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: -917265863, guid: e07ac0087643c124c8bf2a6b9339bf56, type: 3}
+  m_Sprite: {fileID: -374573976, guid: e07ac0087643c124c8bf2a6b9339bf56, type: 3}
   m_Color: {r: 1, g: 0.44705883, b: 0.44705883, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9260,6 +9260,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireTower
       objectReference: {fileID: 0}
+    - target: {fileID: 6641311130274220271, guid: af05923701f11b04fa734caa995891f4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.60032034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641311130274220271, guid: af05923701f11b04fa734caa995891f4, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.07041366
+      objectReference: {fileID: 0}
     - target: {fileID: 7825611897380963202, guid: af05923701f11b04fa734caa995891f4, type: 3}
       propertyPath: spawnInterval
       value: 2.5
@@ -10690,6 +10698,14 @@ PrefabInstance:
       propertyPath: initialPos
       value: 
       objectReference: {fileID: 2039254738}
+    - target: {fileID: 3605955331375869875, guid: 909823dc8c61d9c4a88e7077cfc3ee5d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.60289097
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605955331375869875, guid: 909823dc8c61d9c4a88e7077cfc3ee5d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.054198846
+      objectReference: {fileID: 0}
     - target: {fileID: 4249811377263101727, guid: 909823dc8c61d9c4a88e7077cfc3ee5d, type: 3}
       propertyPath: m_Volume
       value: 0.714
@@ -12375,6 +12391,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1192457933}
     m_Modifications:
+    - target: {fileID: 452292688432391254, guid: fdca4bab0bb40ba4e89796ebc04885f3, type: 3}
+      propertyPath: m_Size.y
+      value: 0.61713976
+      objectReference: {fileID: 0}
+    - target: {fileID: 452292688432391254, guid: fdca4bab0bb40ba4e89796ebc04885f3, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06050268
+      objectReference: {fileID: 0}
     - target: {fileID: 3004109878646529115, guid: fdca4bab0bb40ba4e89796ebc04885f3, type: 3}
       propertyPath: towerType
       value: 0

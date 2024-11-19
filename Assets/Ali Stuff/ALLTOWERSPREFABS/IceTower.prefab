@@ -152,7 +152,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.051225007}
+  m_Offset: {x: 0, y: -0.08646722}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,7 +163,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.40065718}
+  m_Size: {x: 0.64, y: 0.5839168}
   m_EdgeRadius: 0
 --- !u!114 &5785765288349619635
 MonoBehaviour:
@@ -198,15 +198,7 @@ MonoBehaviour:
   initialPos: {fileID: 0}
   initialPos2: {fileID: 0}
   initialPos3: {fileID: 0}
-  dragObject: {fileID: 0}
-  tile: {fileID: 0}
   isPlaced: 0
-  tileSprite: {fileID: 0}
-  boxCollider: {fileID: 0}
-  tileBoxCollider: {fileID: 0}
-  objectDrag: {fileID: 0}
-  towersManager: {fileID: 0}
-  goldManager: {fileID: 0}
   towerCost: 20
   costText: {fileID: 0}
 --- !u!114 &3004109878646529115
