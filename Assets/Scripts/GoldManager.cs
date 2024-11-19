@@ -9,7 +9,7 @@ public class GoldManager : MonoBehaviour
     [SerializeField] public float goldAmount;
     [SerializeField] float goldMaxAmount;
     [SerializeField] float goldIncreaseRate;
-    [SerializeField] TextMeshPro goldText;
+    [SerializeField] public TextMeshPro goldText;
 
 
     public bool EnoughMoney(float towerCost)
