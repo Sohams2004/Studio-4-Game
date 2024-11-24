@@ -199,7 +199,7 @@ MonoBehaviour:
   initialPos2: {fileID: 0}
   initialPos3: {fileID: 0}
   isPlaced: 0
-  towerCost: 20
+  towerCost: 15
   costText: {fileID: 0}
 --- !u!114 &3004109878646529115
 MonoBehaviour:

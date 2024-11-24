@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 1
-  Maxhealth: 35
+  Maxhealth: 50
   health: 0
   damage: 15
   timer: 0
