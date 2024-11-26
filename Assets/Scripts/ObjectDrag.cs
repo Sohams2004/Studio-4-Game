@@ -19,7 +19,7 @@ public class ObjectDrag : MonoBehaviour
     SpriteRenderer tileSprite;
 
     BoxCollider2D boxCollider;
-    BoxCollider2D tileBoxCollider;
+    public BoxCollider2D tileBoxCollider;
     BoxCollider2D towerBoxCollider;
 
     ObjectDrag objectDrag;

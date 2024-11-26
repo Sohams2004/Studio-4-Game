@@ -11,11 +11,13 @@ public class TowerStats : MonoBehaviour
     [SerializeField] public float damage;
 
     TowerHealthBar towerHealthBar;
+    ObjectDrag objectDrag;
 
     private void Start()
     {
         health = Maxhealth;
         towerHealthBar = GetComponent<TowerHealthBar>();
+        objectDrag = GetComponent<ObjectDrag>();
     }
     public void DecrementHealth(float damage)
     {
@@ -30,6 +32,7 @@ public class TowerStats : MonoBehaviour
 
     public void Death()
     {
+        objectDrag.tileBoxCollider.enabled = true;
         Destroy(gameObject);
     }
 }
