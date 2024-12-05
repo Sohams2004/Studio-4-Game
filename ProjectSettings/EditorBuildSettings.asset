@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Tutorial1.unity
+    guid: aae0a07fcdf3bc049941b0c2d7c00c57
+  - enabled: 1
     path: Assets/Scenes/AliScene2.unity
     guid: 05bc1e907b15c6d40b79d3108f8afbbf
   - enabled: 0
