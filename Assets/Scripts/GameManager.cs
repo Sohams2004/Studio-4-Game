@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     public void Resume()
     {
+        isPaused = false;
         Time.timeScale = 1;
         pausePanel.SetActive(false);
     }
