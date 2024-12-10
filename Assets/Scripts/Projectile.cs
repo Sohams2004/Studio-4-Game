@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
 {
     Rigidbody2D projectileRB;
     [SerializeField] float force;
-
+    SpriteRenderer enemySpriteRenderer;
 
     EnemySpawner enemySpawner;
     TowerStats towerStats;
@@ -40,6 +40,8 @@ public class Projectile : MonoBehaviour
             //Destroy(other.gameObject);
         }
     }
+
+
 
     private void Update()
     {

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -7256172875109215061}
   - component: {fileID: 9087156385439923567}
   - component: {fileID: 5562872897068536977}
+  - component: {fileID: 6841240280269825506}
   m_Layer: 6
   m_Name: MushroomEnemy
   m_TagString: Enemy
@@ -243,6 +244,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2114665831695075029}
+--- !u!114 &6841240280269825506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3426899793474765359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172360931133cf1419447bc5107d8956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpriteRenderer: {fileID: 0}
 --- !u!1001 &8241426518449750619
 PrefabInstance:
   m_ObjectHideFlags: 0
