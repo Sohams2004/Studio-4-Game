@@ -31,6 +31,7 @@ public class ObjectDrag : MonoBehaviour
     [SerializeField] TextMeshPro costText;
 
     SpriteRenderer towerSpriteRenderer;
+    [SerializeField] SpriteRenderer towerWeaponSpriteRenderer;
 
     private void Start()
     {
@@ -177,12 +178,14 @@ public class ObjectDrag : MonoBehaviour
         if (!goldManager.EnoughMoney(towerCost))
         {
             towerSpriteRenderer.color = new Color(1, 1, 1, 0.3f);
+            towerWeaponSpriteRenderer.color = new Color(1, 1, 1, 0.3f);
             towerBoxCollider.enabled = false;
         }
 
         else
         {
             towerSpriteRenderer.color = new Color(1, 1, 1, 1);
+            towerWeaponSpriteRenderer.color = new Color(1, 1, 1, 1);
             towerBoxCollider.enabled = true;
         }
     }

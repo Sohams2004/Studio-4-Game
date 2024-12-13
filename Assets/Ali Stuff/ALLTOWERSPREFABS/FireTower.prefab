@@ -198,8 +198,10 @@ MonoBehaviour:
   initialPos2: {fileID: 0}
   initialPos3: {fileID: 0}
   isPlaced: 0
+  tileBoxCollider: {fileID: 0}
   towerCost: 30
   costText: {fileID: 0}
+  towerWeaponSpriteRenderer: {fileID: 8607051253902702423}
 --- !u!114 &106516645814101188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +422,11 @@ MonoBehaviour:
 --- !u!4 &2914536373471418558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 8b57d23b9d9c5ed4eb7288b7811a87b2, type: 3}
+  m_PrefabInstance: {fileID: 4982958917878310835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8607051253902702423 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: 8b57d23b9d9c5ed4eb7288b7811a87b2, type: 3}
   m_PrefabInstance: {fileID: 4982958917878310835}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8038446251590574990

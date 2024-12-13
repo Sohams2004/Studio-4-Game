@@ -136,8 +136,10 @@ MonoBehaviour:
   initialPos2: {fileID: 0}
   initialPos3: {fileID: 0}
   isPlaced: 0
+  tileBoxCollider: {fileID: 0}
   towerCost: 10
   costText: {fileID: 0}
+  towerWeaponSpriteRenderer: {fileID: 1283410410027199109}
 --- !u!114 &1884962475258907357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,6 +472,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8705389454493329354}
   m_SourcePrefab: {fileID: 100100000, guid: de30058e091683741951342a0519bc70, type: 3}
+--- !u!212 &1283410410027199109 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4640605546428327675, guid: de30058e091683741951342a0519bc70, type: 3}
+  m_PrefabInstance: {fileID: 5884279328646417534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4837583537990888713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1336342341008335223, guid: de30058e091683741951342a0519bc70, type: 3}
