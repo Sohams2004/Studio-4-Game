@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower 05 - Level 01 - Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 7b0203ccbeba1374d8d28ec123d193c9, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7b0203ccbeba1374d8d28ec123d193c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.275542
